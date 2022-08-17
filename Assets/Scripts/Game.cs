@@ -5,37 +5,24 @@ using UnityEngine.UI;
 
 public class Game : MonoBehaviour
 {
-    //public Button brickButton;
-    //public Image BrickPanels;
     public BrickArea brickButton;
-    public GridLayoutGroup bottomPanel;
-    public GridLayoutGroup topPanel;
+    public Panel bottomPanel;
+    public Panel topPanel;
     public Text levelText;
-
-    
-    
-
-
-    Image[] bottom;
-    Image[] top;
-
-    Text[] BrickText;
+    public BackPanel buildings;
 
     int level;
     int [] levelBricks= { 3,3,4,5,6,7,8,9,10,11,12, 13,14,15,16 };
-    int [] levelMaxNumber= {9,15,25,35,45,55,65,75,85,95,105,115,135,145,165 };
+    int [] levelMaxNumber= {9,15,25,35,45,55,65,75,85,95,105,115,135,145,165};
     int max;
     int delCount;
-    Vector2[] location;
     // Start is called before the first frame update
     void Start()
     {
        
         level = 0;
-        /*bottom = bottomPanel.GetComponents<Image>();
-        top = topPanel.GetComponents<Image>();
-        BrickText = new Text[brickBut.Length];*/
-        StartCoroutine( numberGenerator());
+        deleteBrick();
+        StartCoroutine(numberGenerator());
         brickButton.closeZero();
         max = 0;
         delCount = 0;
@@ -53,15 +40,7 @@ public class Game : MonoBehaviour
                     max = brickButton.getChild(i).getNumber();
             }
         }
-        if(levelBricks[level]==delCount)
-        {
-            System.GC.Collect();
-            Resources.UnloadUnusedAssets();
-            delCount = 0;
-            level++;
-            StartCoroutine(numberGenerator());
-           
-        }
+       
     }
     IEnumerator numberGenerator()
     {
@@ -70,21 +49,12 @@ public class Game : MonoBehaviour
             yield return new WaitForSeconds(1f);
             brickButton.ResPosition();
         }
-        for (int i = 0; i < levelBricks[level]; i++)
+        for (int i = 0; i < levelBricks[level]; i++)    
         {
-            int column =Random.Range(0, 4);
-            int number = Random.Range(1, levelMaxNumber[level]);
-            
-            if (!brickButton.numContain(number))
-                brickButton.add(column, number);
-            else
-                i--;
+            i += brickButton.add(Random.Range(0, 4), Random.Range(1, levelMaxNumber[level]));
         }
-        
+       
         brickButton.closeZero();
-
-
-
     }
     public void pick(int index)
     {
@@ -93,14 +63,87 @@ public class Game : MonoBehaviour
             brickButton.delete(index);
             max = 0;
             delCount++;
+            addBrick();
+            if (levelBricks[level] == delCount)
+            {
+                delCount = 0;
+                level++;
+                deleteBrick();
+                buildings.incAnc();
+                StartCoroutine(numberGenerator());
+            }
         }
 
     }
-    public void resPos()
+    void deleteBrick()
     {
-        for(int i = 0; i < location.Length; i++)
+        topPanel.regen();
+        bottomPanel.regen();
+        for(int i=0;i< levelBricks[level]; i++)
         {
-            brickButton.getChild(i).setPositionY((int)location[i].y,1);
+            bool panelSelect=false;
+            if (topPanel.isEmpty())
+            {
+                panelSelect = true;
+            }
+            else if (bottomPanel)
+            {
+                panelSelect = false;
+            }
+            else
+            {
+                if (Random.Range(0, 2) == 1)
+                {
+                    panelSelect = false;
+                }
+                else
+                {
+                    panelSelect = true;
+                }
+            }
+            if(panelSelect)
+            {
+                int number;
+                bool deleted = false;
+                while (!deleted)
+                {
+                    number = Random.Range(0, 8);
+                    if (!bottomPanel.isDeleted(number))
+                    {
+                        bottomPanel.delete(number);
+                        deleted = true;
+                    }
+                }
+                
+               
+            }
+            else
+            {
+                int number;
+                bool deleted = false;
+                while (!deleted)
+                {
+                    number = Random.Range(0, 8);
+                    if (!topPanel.isDeleted(number))
+                    {
+                        topPanel.delete(number);
+                        deleted = true;
+                    }
+                }
+            }
+            
+        }  
+       
+    }
+    void addBrick()
+    {
+        if (bottomPanel.isMissing() != -1)
+        {
+            bottomPanel.comeback(bottomPanel.isMissing());
+        }
+        else if(topPanel.isMissing()!=-1)
+        {
+            topPanel.comeback(topPanel.isMissing());
         }
     }
 }

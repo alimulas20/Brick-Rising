@@ -7,14 +7,12 @@ using DG.Tweening;
 
 public class BrickButton : MonoBehaviour
 {
-    float positionFirst;
     public Text numberText;
     bool Deleted;
 
     // Start is called before the first frame update
     void Start()
     {
-        positionFirst = transform.localPosition.y;
         Deleted = true;
 
     }
@@ -49,19 +47,32 @@ public class BrickButton : MonoBehaviour
     {
         if (isOut)
         {
-            transform.GetComponent<Image>().DOFade(0, 1f).SetAutoKill();
-            numberText.DOFade(0, 1f).SetAutoKill();
+            transform.GetComponent<Image>().DOFade(0, 0.5f).SetAutoKill();
+             numberText.DOFade(0, 1f).SetAutoKill();
+           /* Color a = transform.GetComponent<Image>().color;
+            a.a = 0;
+            transform.GetComponent<Image>().color = a;
+            Color b = numberText.color;
+            b.a = 0;
+            numberText.color = b;*/
         }
         else
         {
-            transform.GetComponent<Image>().DOFade(1, 1f).SetAutoKill();
-            numberText.DOFade(1, 1f);
+            transform.GetComponent<Image>().DOFade(1, 0.5f).SetAutoKill();
+            numberText.DOFade(1, 1f).SetAutoKill();
+           /* Color a = transform.GetComponent<Image>().color;
+            a.a = 1;
+            transform.GetComponent<Image>().color = a;
+            Color b = numberText.color;
+            b.a = 1;
+            numberText.color = b;*/
+            
         }
     }
-    public void setPositionY(int y,int time)
+    public void setPositionY(int y)
     {
-        transform.DOLocalMoveY(y, time).SetEase(Ease.InExpo).SetAutoKill();
-        //transform.localPosition = new Vector3(transform.localPosition.x, y, transform.localPosition.z);
+        transform.DOLocalMoveY(y, 0.5f).SetEase(Ease.InExpo).SetAutoKill();
+       // transform.localPosition = new Vector3(transform.localPosition.x, y, transform.localPosition.z);
     }
     public void Delete()
     {
