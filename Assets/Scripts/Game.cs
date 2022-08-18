@@ -79,60 +79,47 @@ public class Game : MonoBehaviour
     {
         topPanel.regen();
         bottomPanel.regen();
-        for(int i=0;i< levelBricks[level]; i++)
+        for (int i = 0; i < levelBricks[level]; i++)
         {
-            bool panelSelect=false;
+            int number = Random.Range(0, 16);
+            if (bottomPanel.isEmpty())
+            {
+                number = Random.Range(0, 8);
+            }
             if (topPanel.isEmpty())
             {
-                panelSelect = true;
+                number = Random.Range(8, 16);
             }
-            else if (bottomPanel)
+            bool deleted = false;
+            while (!deleted)
             {
-                panelSelect = false;
-            }
-            else
-            {
-                if (Random.Range(0, 2) == 1)
+                if (number > 7)
                 {
-                    panelSelect = false;
+                    if(!topPanel.isDeleted(number % 8))
+                    {
+                        topPanel.delete(number % 8);
+                        deleted = true;
+                    }
+                    else
+                    {
+                        number++;
+                    }
                 }
                 else
                 {
-                    panelSelect = true;
-                }
-            }
-            if(panelSelect)
-            {
-                int number;
-                bool deleted = false;
-                while (!deleted)
-                {
-                    number = Random.Range(0, 8);
-                    if (!bottomPanel.isDeleted(number))
+                    if (!bottomPanel.isDeleted(number % 8))
                     {
-                        bottomPanel.delete(number);
+                        bottomPanel.delete(number % 8);
                         deleted = true;
                     }
-                }
-                
-               
-            }
-            else
-            {
-                int number;
-                bool deleted = false;
-                while (!deleted)
-                {
-                    number = Random.Range(0, 8);
-                    if (!topPanel.isDeleted(number))
+                    else
                     {
-                        topPanel.delete(number);
-                        deleted = true;
+                        number++;
                     }
                 }
             }
-            
-        }  
+        }
+        
        
     }
     void addBrick()

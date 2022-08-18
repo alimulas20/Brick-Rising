@@ -6,11 +6,12 @@ using DG.Tweening;
 
 public class Panel : MonoBehaviour
 {
-    public Image[] images;
+    public Brick[] bricks;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -20,34 +21,29 @@ public class Panel : MonoBehaviour
     }
     public void delete(int index)
     {
-        /*Color color = images[index].color;
-        color.a = 0;
-        images[index].color = color;*/
-        images[index].DOFade(0, 0.75f);
+        bricks[index].delete();
     }
     public void regen()
     {
-        for(int i = 0; i < images.Length; i++)
+        for(int i = 0; i < bricks.Length; i++)
         {
-            Color color = images[i].color;
-            color.a = 1;
-            images[i].color = color;
+            bricks[i].regen();
 
         }
     }
     public bool isDeleted(int index)
     {
-        if (images[index].color.a == 0)
-        {
-            return true;
-        }
-        return false;
+       return bricks[index].isDeleted();
+        
     }
     public int isMissing()
     {
-        for(int i = 0; i < images.Length; i++)
+
+        for(int i = 0; i < bricks.Length; i++)
         {
-            if (images[i].color.a == 0)
+            
+           
+            if (bricks[i].isDeleted())
             {
                 return i;
             }
@@ -56,15 +52,13 @@ public class Panel : MonoBehaviour
     }
     public void comeback(int index)
     {
-        Color a= images[index].color;
-        a.a = 1;
-        images[index].color = a;
+        bricks[index].regen();
     }
     public bool isEmpty()
     {
-        for(int i = 0; i < images.Length; i++)
+        for(int i = 0; i < bricks.Length; i++)
         {
-            if (!isDeleted(i))
+            if (!bricks[i].isDeleted())
             {
                 return false;
             }

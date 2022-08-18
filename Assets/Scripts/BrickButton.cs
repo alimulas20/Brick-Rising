@@ -71,8 +71,7 @@ public class BrickButton : MonoBehaviour
     }
     public void setPositionY(int y)
     {
-        transform.DOLocalMoveY(y, 0.5f).SetEase(Ease.InExpo).SetAutoKill();
-       // transform.localPosition = new Vector3(transform.localPosition.x, y, transform.localPosition.z);
+        transform.DOLocalMoveY(y, 0.25f).SetEase(Ease.InExpo).SetAutoKill();
     }
     public void Delete()
     {
