@@ -8,12 +8,11 @@ using DG.Tweening;
 public class BrickButton : MonoBehaviour
 {
     public Text numberText;
-    bool Deleted;
+    bool Deleted=true;
 
     // Start is called before the first frame update
     void Start()
     {
-        Deleted = true;
 
     }
 
@@ -49,24 +48,11 @@ public class BrickButton : MonoBehaviour
         {
             transform.GetComponent<Image>().DOFade(0, 0.5f).SetAutoKill();
              numberText.DOFade(0, 1f).SetAutoKill();
-           /* Color a = transform.GetComponent<Image>().color;
-            a.a = 0;
-            transform.GetComponent<Image>().color = a;
-            Color b = numberText.color;
-            b.a = 0;
-            numberText.color = b;*/
         }
         else
         {
             transform.GetComponent<Image>().DOFade(1, 0.5f).SetAutoKill();
-            numberText.DOFade(1, 1f).SetAutoKill();
-           /* Color a = transform.GetComponent<Image>().color;
-            a.a = 1;
-            transform.GetComponent<Image>().color = a;
-            Color b = numberText.color;
-            b.a = 1;
-            numberText.color = b;*/
-            
+            numberText.DOFade(1, 1f).SetAutoKill();  
         }
     }
     public void setPositionY(int y)

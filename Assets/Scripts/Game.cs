@@ -40,7 +40,6 @@ public class Game : MonoBehaviour
                     max = brickButton.getChild(i).getNumber();
             }
         }
-       
     }
     IEnumerator numberGenerator()
     {

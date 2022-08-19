@@ -8,7 +8,8 @@ public class BrickArea : MonoBehaviour
     public BrickButton[] Childs;
     void Start()
     {
-       
+        Debug.Log(Childs[0].isDeleted()+"0");
+        Debug.Log(Childs[1].isDeleted()+"1");
     }
 
     // Update is called once per frame
@@ -37,6 +38,8 @@ public class BrickArea : MonoBehaviour
     }
     public int add( int column,int value)
     {
+
+       
         if (numContain(value))
         {
            return -1;
@@ -59,9 +62,11 @@ public class BrickArea : MonoBehaviour
                
         }
         return 0;
+        
     }
     public void closeZero()
-    {for(int i = 0; i < Childs.Length; i++)
+    {
+        for (int i = 0; i < Childs.Length; i++)
         {
             if (Childs[i].getNumber() == 0)
             {
