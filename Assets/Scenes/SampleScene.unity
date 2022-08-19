@@ -353,6 +353,7 @@ GameObject:
   - component: {fileID: 31087817}
   - component: {fileID: 31087819}
   - component: {fileID: 31087818}
+  - component: {fileID: 31087820}
   m_Layer: 0
   m_Name: Brick5
   m_TagString: Untagged
@@ -417,6 +418,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31087816}
   m_CullTransparentMesh: 1
+--- !u!114 &31087820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31087816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411a2e55fbc82084fba84e21613ef8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &32804157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -727,15 +740,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 797a721d1901b3c4987392ed4d1131ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  images:
-  - {fileID: 1331152217}
-  - {fileID: 2011440888}
-  - {fileID: 206331566}
-  - {fileID: 1753852479}
-  - {fileID: 952046595}
-  - {fileID: 918261877}
-  - {fileID: 919699475}
-  - {fileID: 1040350727}
+  bricks:
+  - {fileID: 1331152219}
+  - {fileID: 2011440890}
+  - {fileID: 206331568}
+  - {fileID: 1753852481}
+  - {fileID: 952046597}
+  - {fileID: 918261879}
+  - {fileID: 919699477}
+  - {fileID: 1040350729}
 --- !u!224 &199396884 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4328992903628741166, guid: 602ab4feefa718040bd8e7289fa538ef, type: 3}
@@ -763,6 +776,7 @@ GameObject:
   - component: {fileID: 206331565}
   - component: {fileID: 206331567}
   - component: {fileID: 206331566}
+  - component: {fileID: 206331568}
   m_Layer: 0
   m_Name: Brick3
   m_TagString: Untagged
@@ -827,6 +841,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206331564}
   m_CullTransparentMesh: 1
+--- !u!114 &206331568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206331564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411a2e55fbc82084fba84e21613ef8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &225771735 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4328992903628741166, guid: 602ab4feefa718040bd8e7289fa538ef, type: 3}
@@ -1167,6 +1193,7 @@ GameObject:
   - component: {fileID: 463018102}
   - component: {fileID: 463018104}
   - component: {fileID: 463018103}
+  - component: {fileID: 463018105}
   m_Layer: 0
   m_Name: Brick3
   m_TagString: Untagged
@@ -1231,6 +1258,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463018101}
   m_CullTransparentMesh: 1
+--- !u!114 &463018105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463018101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411a2e55fbc82084fba84e21613ef8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &468153131 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4328992903628741166, guid: 602ab4feefa718040bd8e7289fa538ef, type: 3}
@@ -1346,6 +1385,7 @@ GameObject:
   - component: {fileID: 482336394}
   - component: {fileID: 482336396}
   - component: {fileID: 482336395}
+  - component: {fileID: 482336397}
   m_Layer: 0
   m_Name: Brick4
   m_TagString: Untagged
@@ -1410,6 +1450,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 482336393}
   m_CullTransparentMesh: 1
+--- !u!114 &482336397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482336393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411a2e55fbc82084fba84e21613ef8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &512227968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1744,6 +1796,7 @@ GameObject:
   - component: {fileID: 687397754}
   - component: {fileID: 687397756}
   - component: {fileID: 687397755}
+  - component: {fileID: 687397757}
   m_Layer: 0
   m_Name: Brick7
   m_TagString: Untagged
@@ -1808,6 +1861,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687397753}
   m_CullTransparentMesh: 1
+--- !u!114 &687397757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687397753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411a2e55fbc82084fba84e21613ef8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &695841810 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4328992903628741166, guid: 602ab4feefa718040bd8e7289fa538ef, type: 3}
@@ -2031,6 +2096,7 @@ GameObject:
   - component: {fileID: 918261876}
   - component: {fileID: 918261878}
   - component: {fileID: 918261877}
+  - component: {fileID: 918261879}
   m_Layer: 0
   m_Name: Brick6
   m_TagString: Untagged
@@ -2095,6 +2161,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918261875}
   m_CullTransparentMesh: 1
+--- !u!114 &918261879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918261875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411a2e55fbc82084fba84e21613ef8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &919699473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,6 +2184,7 @@ GameObject:
   - component: {fileID: 919699474}
   - component: {fileID: 919699476}
   - component: {fileID: 919699475}
+  - component: {fileID: 919699477}
   m_Layer: 0
   m_Name: Brick7
   m_TagString: Untagged
@@ -2170,6 +2249,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919699473}
   m_CullTransparentMesh: 1
+--- !u!114 &919699477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919699473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411a2e55fbc82084fba84e21613ef8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &935353848
 GameObject:
   m_ObjectHideFlags: 0
@@ -2256,6 +2347,7 @@ GameObject:
   - component: {fileID: 952046594}
   - component: {fileID: 952046596}
   - component: {fileID: 952046595}
+  - component: {fileID: 952046597}
   m_Layer: 0
   m_Name: Brick5
   m_TagString: Untagged
@@ -2320,6 +2412,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952046593}
   m_CullTransparentMesh: 1
+--- !u!114 &952046597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952046593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411a2e55fbc82084fba84e21613ef8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &960578934
 GameObject:
   m_ObjectHideFlags: 0
@@ -2331,6 +2435,7 @@ GameObject:
   - component: {fileID: 960578935}
   - component: {fileID: 960578937}
   - component: {fileID: 960578936}
+  - component: {fileID: 960578938}
   m_Layer: 0
   m_Name: Brick6
   m_TagString: Untagged
@@ -2395,6 +2500,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 960578934}
   m_CullTransparentMesh: 1
+--- !u!114 &960578938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960578934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411a2e55fbc82084fba84e21613ef8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &983833539
 GameObject:
   m_ObjectHideFlags: 0
@@ -2684,6 +2801,7 @@ GameObject:
   - component: {fileID: 1040350726}
   - component: {fileID: 1040350728}
   - component: {fileID: 1040350727}
+  - component: {fileID: 1040350729}
   m_Layer: 0
   m_Name: Brick8
   m_TagString: Untagged
@@ -2748,6 +2866,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040350725}
   m_CullTransparentMesh: 1
+--- !u!114 &1040350729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040350725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411a2e55fbc82084fba84e21613ef8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1059201329
 GameObject:
   m_ObjectHideFlags: 0
@@ -3776,6 +3906,7 @@ GameObject:
   - component: {fileID: 1315386561}
   - component: {fileID: 1315386563}
   - component: {fileID: 1315386562}
+  - component: {fileID: 1315386564}
   m_Layer: 0
   m_Name: Brick1
   m_TagString: Untagged
@@ -3840,6 +3971,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1315386560}
   m_CullTransparentMesh: 1
+--- !u!114 &1315386564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315386560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411a2e55fbc82084fba84e21613ef8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1331152215
 GameObject:
   m_ObjectHideFlags: 0
@@ -3851,6 +3994,7 @@ GameObject:
   - component: {fileID: 1331152216}
   - component: {fileID: 1331152218}
   - component: {fileID: 1331152217}
+  - component: {fileID: 1331152219}
   m_Layer: 0
   m_Name: Brick1
   m_TagString: Untagged
@@ -3915,6 +4059,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331152215}
   m_CullTransparentMesh: 1
+--- !u!114 &1331152219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331152215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411a2e55fbc82084fba84e21613ef8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1336432030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4299,8 +4455,8 @@ Canvas:
   m_GameObject: {fileID: 1392555191}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -4322,6 +4478,7 @@ GameObject:
   - component: {fileID: 1417283503}
   - component: {fileID: 1417283505}
   - component: {fileID: 1417283504}
+  - component: {fileID: 1417283506}
   m_Layer: 0
   m_Name: Brick8
   m_TagString: Untagged
@@ -4386,6 +4543,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417283502}
   m_CullTransparentMesh: 1
+--- !u!114 &1417283506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417283502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411a2e55fbc82084fba84e21613ef8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1453526536
 GameObject:
   m_ObjectHideFlags: 0
@@ -4717,15 +4886,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 797a721d1901b3c4987392ed4d1131ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  images:
-  - {fileID: 1315386562}
-  - {fileID: 1693250389}
-  - {fileID: 463018103}
-  - {fileID: 482336395}
-  - {fileID: 31087818}
-  - {fileID: 960578936}
-  - {fileID: 687397755}
-  - {fileID: 1417283504}
+  bricks:
+  - {fileID: 1315386564}
+  - {fileID: 1693250391}
+  - {fileID: 463018105}
+  - {fileID: 482336397}
+  - {fileID: 31087820}
+  - {fileID: 960578938}
+  - {fileID: 687397757}
+  - {fileID: 1417283506}
 --- !u!1 &1661388234
 GameObject:
   m_ObjectHideFlags: 0
@@ -4816,6 +4985,7 @@ GameObject:
   - component: {fileID: 1693250388}
   - component: {fileID: 1693250390}
   - component: {fileID: 1693250389}
+  - component: {fileID: 1693250391}
   m_Layer: 0
   m_Name: Brick2
   m_TagString: Untagged
@@ -4880,6 +5050,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693250387}
   m_CullTransparentMesh: 1
+--- !u!114 &1693250391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693250387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411a2e55fbc82084fba84e21613ef8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1753852477
 GameObject:
   m_ObjectHideFlags: 0
@@ -4891,6 +5073,7 @@ GameObject:
   - component: {fileID: 1753852478}
   - component: {fileID: 1753852480}
   - component: {fileID: 1753852479}
+  - component: {fileID: 1753852481}
   m_Layer: 0
   m_Name: Brick4
   m_TagString: Untagged
@@ -4955,6 +5138,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753852477}
   m_CullTransparentMesh: 1
+--- !u!114 &1753852481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753852477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411a2e55fbc82084fba84e21613ef8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1773764470
 GameObject:
   m_ObjectHideFlags: 0
@@ -5337,6 +5532,7 @@ GameObject:
   - component: {fileID: 2011440887}
   - component: {fileID: 2011440889}
   - component: {fileID: 2011440888}
+  - component: {fileID: 2011440890}
   m_Layer: 0
   m_Name: Brick2
   m_TagString: Untagged
@@ -5401,6 +5597,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2011440886}
   m_CullTransparentMesh: 1
+--- !u!114 &2011440890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011440886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411a2e55fbc82084fba84e21613ef8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2015021517 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4328992903628741154, guid: 602ab4feefa718040bd8e7289fa538ef, type: 3}
