@@ -18,11 +18,14 @@ public class Brick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (GetComponent<Image>().color.a == 0)
+        {
+            deleted = true;
+        }
     }
     public void delete()
     {
-        //image.DOFade(0, 0.75f).SetAutoKill(false);
+       
         Color a = GetComponent<Image>().color;
         a.a = 0;
         GetComponent<Image>().color = a;

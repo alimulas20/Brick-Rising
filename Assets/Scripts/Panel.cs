@@ -43,7 +43,7 @@ public class Panel : MonoBehaviour
         {
             
            
-            if (bricks[i].isDeleted())
+            if (isDeleted(i))
             {
                 return i;
             }

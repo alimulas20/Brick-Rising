@@ -2,15 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class Game : MonoBehaviour
 {
     public BrickArea brickButton;
     public Panel bottomPanel;
     public Panel topPanel;
-    public Text levelText;
     public BackPanel buildings;
+    public GameObject panel;
+    public GameObject bg;
+    public Timer slider;
+    public Image toolPanel;
+    public Image intro;
+    public Image introButton;
+    public Image win;
+    public Image lose;
 
+    bool play;
     int level;
     int [] levelBricks= { 3,3,4,5,6,7,8,9,10,11,12, 13,14,15,16 };
     int [] levelMaxNumber= {9,15,25,35,45,55,65,75,85,95,105,115,135,145,165};
@@ -19,7 +28,8 @@ public class Game : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        play = false;
+        StartCoroutine(starter());
         level = 0;
         deleteBrick();
         StartCoroutine(numberGenerator());
@@ -31,7 +41,7 @@ public class Game : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        levelText.text = (level + 1).ToString();
+        //levelText.text = (level + 1).ToString();
         for (int i = 0; i < brickButton.length(); i++)
         {
             if (brickButton.getChild(i).getNumber() > max)
@@ -40,12 +50,46 @@ public class Game : MonoBehaviour
                     max = brickButton.getChild(i).getNumber();
             }
         }
+        if (intro.color.a == 0)
+        {
+            intro.gameObject.SetActive(false);
+            introButton.gameObject.SetActive(false);
+        }
+        if (slider.stopTimer == true)
+        {
+            slider.resTime();
+            lose.gameObject.SetActive(true);
+            brickButton.res();
+            max = 0;
+            StartCoroutine(numberGenerator());
+        }
+    }
+    IEnumerator starter()
+    {
+        yield return new WaitWhile(()=>!play);
+        brickButton.gameObject.SetActive(true);
+        panel.SetActive(true);
+        bg.SetActive(true);
+        toolPanel.gameObject.SetActive(true);
+        slider.gameObject.SetActive(true);
+        slider.play();
+        intro.DOFade(0, 0.5f);
+        introButton.DOFade(0, 0.5f);
+
+    }
+    public void StartPlay()
+    {
+        play = true;
+
+
     }
     IEnumerator numberGenerator()
     {
         if (level != 0)
         {
             yield return new WaitForSeconds(1f);
+            win.gameObject.SetActive(false);
+            lose.gameObject.SetActive(false);
             brickButton.ResPosition();
         }
         for (int i = 0; i < levelBricks[level]; i++)    
@@ -65,10 +109,12 @@ public class Game : MonoBehaviour
             addBrick();
             if (levelBricks[level] == delCount)
             {
+                win.gameObject.SetActive(true);
                 delCount = 0;
                 level++;
                 deleteBrick();
                 buildings.incAnc();
+                slider.play();
                 StartCoroutine(numberGenerator());
             }
         }

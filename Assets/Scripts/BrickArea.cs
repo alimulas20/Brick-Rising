@@ -8,8 +8,6 @@ public class BrickArea : MonoBehaviour
     public BrickButton[] Childs;
     void Start()
     {
-        Debug.Log(Childs[0].isDeleted()+"0");
-        Debug.Log(Childs[1].isDeleted()+"1");
     }
 
     // Update is called once per frame
@@ -98,5 +96,14 @@ public class BrickArea : MonoBehaviour
     public BrickButton getChild( int index)
     {
         return Childs[index];
+    }
+    public void res()
+    {
+
+        for(int i = 0; i < Childs.Length; i++)
+        {
+            delete(i);
+        }
+        ResPosition();
     }
 }
