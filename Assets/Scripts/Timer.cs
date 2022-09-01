@@ -9,6 +9,9 @@ public class Timer : MonoBehaviour
     public float gameTime;
     public bool stopTimer;
     float timeCount = 0;
+    bool started;
+   
+
 
     void Start()
     {
@@ -23,7 +26,12 @@ public class Timer : MonoBehaviour
         float time = timeCount - Time.time;
         if (time <= 0)
         {
-            stopTimer = true;
+            if (started)
+            {
+                stopTimer = true;
+                started = false;
+            }
+            
 
         }
         if (stopTimer == false)
@@ -35,10 +43,12 @@ public class Timer : MonoBehaviour
     {
         timeCount = gameTime;
         timeCount += Time.time;
+        started = true;
     }
     public void resTime()
     {
         timeCount = gameTime + Time.time;
         stopTimer = false;
+        started = true;
     }
 }

@@ -9,17 +9,19 @@ public class BrickButton : MonoBehaviour
 {
     public Text numberText;
     bool Deleted=true;
-
+    Image image;
+    Sequence colorSeq;
+    Sequence clueSeq;
     // Start is called before the first frame update
     void Start()
     {
-
+        image = GetComponent<Image>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.GetComponent<Image>().color.a == 0)
+        if (GetComponent<Image>().color.a == 0)
         {
             numberText.text = "0";
             transform.gameObject.SetActive(false);
@@ -42,16 +44,17 @@ public class BrickButton : MonoBehaviour
     {
         return (int)transform.localPosition.y;
     }
+   
     public void Fade(bool isOut)
     {
         if (isOut)
         {
-            transform.GetComponent<Image>().DOFade(0, 0.5f).SetAutoKill();
+            GetComponent<Image>().DOFade(0, 0.5f).SetAutoKill();
              numberText.DOFade(0, 1f).SetAutoKill();
         }
         else
         {
-            transform.GetComponent<Image>().DOFade(1, 0.5f).SetAutoKill();
+            GetComponent<Image>().DOFade(1, 0.5f).SetAutoKill();
             numberText.DOFade(1, 1f).SetAutoKill();  
         }
     }
@@ -67,5 +70,33 @@ public class BrickButton : MonoBehaviour
     {
         return Deleted;
     }
-    
+    public void wrong()
+    {
+        colorSeq = DOTween.Sequence();
+        colorSeq.Append(GetComponent<Image>().DOColor(Color.red,1f).SetEase(Ease.InBounce).SetAutoKill());
+        colorSeq.Append(GetComponent<Image>().DOColor(new Color(1,1,1), .5f).SetAutoKill());
+        colorSeq.SetAutoKill();
+    }
+    public void killWrong()
+    {
+        colorSeq.Kill(false);
+        GetComponent<Image>().color = new Color(1, 1, 1);
+        
+    }
+    public void clue()
+    {
+        colorSeq = DOTween.Sequence();
+        colorSeq.Append(GetComponent<Image>().DOColor(Color.green, 1f).SetEase(Ease.InBounce).SetAutoKill());
+        colorSeq.Append(GetComponent<Image>().DOColor(new Color(1, 1, 1), .5f).SetAutoKill());
+        colorSeq.SetAutoKill();
+    }
+    public void killClue()
+    {
+        colorSeq.Kill(false);
+        GetComponent<Image>().color = new Color(1, 1, 1);
+    }
+    public Vector3 getPosition()
+    {
+        return transform.localPosition;
+    }
 }

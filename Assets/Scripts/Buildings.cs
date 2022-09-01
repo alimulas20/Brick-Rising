@@ -21,7 +21,7 @@ public class Buildings : MonoBehaviour
     public void increase()
     {
         Vector2 temp = GetComponent<RectTransform>().anchorMax;
-        temp.y += 0.1f;
+        temp.y += 0.05f;
         GetComponent<RectTransform>().DOAnchorMax(temp,0.5f).SetEase(Ease.InBounce).SetAutoKill();
     }
     public float getAnc()

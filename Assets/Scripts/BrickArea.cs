@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class BrickArea : MonoBehaviour
 {
     public BrickButton[] Childs;
+
     void Start()
     {
     }
@@ -17,6 +18,8 @@ public class BrickArea : MonoBehaviour
     }
     public void delete(int index)
     {
+        Childs[index].killWrong();
+        Childs[index].killClue();
         Childs[index].Fade(true);
         Childs[index].Delete();
         for(int i = index+1; i < (index)+(4-index%4); i++)
@@ -73,6 +76,8 @@ public class BrickArea : MonoBehaviour
             else
             {
                 Childs[i].transform.gameObject.SetActive(true);
+                Childs[i].killWrong();
+                Childs[i].killClue();
                 Childs[i].Fade(false);
             }
         }
@@ -88,6 +93,11 @@ public class BrickArea : MonoBehaviour
             }
             
         }
+        for(int i = 0; i < Childs.Length; i++)
+        {
+            Childs[i].killWrong();
+            Childs[i].killClue();
+        }
     }
     public int length()
     {
@@ -95,7 +105,12 @@ public class BrickArea : MonoBehaviour
     }
     public BrickButton getChild( int index)
     {
-        return Childs[index];
+        if(index>-1)
+            return Childs[index];
+        else
+        {
+            return new BrickButton();
+        }
     }
     public void res()
     {
@@ -105,5 +120,26 @@ public class BrickArea : MonoBehaviour
             delete(i);
         }
         ResPosition();
+    }
+    public int maxIndex()
+    {
+        int max = 0;
+        int index = 0; ;
+        for(int i = 0; i < Childs.Length; i++)
+        {
+            if (Childs[i].getNumber() > max)
+            {
+                max = Childs[i].getNumber();
+                index = i;
+            }
+        }
+        return index;
+    }
+    public void killWrong()
+    {
+        for(int i = 0; i < Childs.Length; i++)
+        {
+            Childs[i].killWrong();
+        }
     }
 }

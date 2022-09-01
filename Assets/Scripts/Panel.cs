@@ -50,9 +50,9 @@ public class Panel : MonoBehaviour
         }
         return -1;
     }
-    public void comeback(int index)
+    public void comeback(int index,int value,Vector3 position)
     {
-        bricks[index].regen();
+        bricks[index].comeback(value,position);
     }
     public bool isEmpty()
     {
@@ -64,5 +64,19 @@ public class Panel : MonoBehaviour
             }
         }
         return true;
+    }
+    public void fadeOut()
+    {
+        for(int i = 0; i < bricks.Length; i++)
+        {
+            bricks[i].fadeOut();
+        }
+    }
+    public void fadeIn()
+    {
+        for (int i = 0; i < bricks.Length; i++)
+        {
+            bricks[i].fadeIn();
+        }
     }
 }
