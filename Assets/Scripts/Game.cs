@@ -124,6 +124,8 @@ public class Game : MonoBehaviour
     public void StartPlay()
     {
         play = true;
+        clueBool = false;
+        StartCoroutine(clue(3));
 
 
     }
@@ -147,8 +149,7 @@ public class Game : MonoBehaviour
     {
         delCount = 0;
         // if (level != 0)
-        if (level < 5)
-            StartCoroutine(clue(5));
+        
 
         yield return new WaitForSeconds(1f);
         deleteBrick();
@@ -167,7 +168,7 @@ public class Game : MonoBehaviour
     public void pick(int index)
     {
         if (level < 5)
-            StartCoroutine(clue(4));
+            StartCoroutine(clue(3));
         //brickButton.killWrong();
         if (brickButton.getChild(index).getNumber() == max)
         {
@@ -193,13 +194,23 @@ public class Game : MonoBehaviour
                     slider.play();
                     StartCoroutine(numberGenerator());
                 }
+                else
+                {
+                    finish = true;
+                    win.gameObject.SetActive(true);
+                    StartCoroutine(finisher());
+                }
 
             }
         }
         else
         {
-            if(!brickButton.getChild(index).isDeleted())
+            if (!brickButton.getChild(index).isDeleted())
+            {
                 brickButton.getChild(index).wrong();
+                slider.decTime();
+            }
+               
            
         }
 
@@ -216,10 +227,12 @@ public class Game : MonoBehaviour
             bool deleted = false;
             while (!deleted)
             {
+                number = number % 16;
                 if (number > 9)
                 {
-                    if(!panels[2].isDeleted(number-9))
+                    if (!panels[2].isDeleted(number-9))
                     {
+                        
                         panels[2].delete(number-9);
                         deleted = true;
                     }
@@ -271,6 +284,7 @@ public class Game : MonoBehaviour
     }
     public void restart()
     {
+       
         slider.gameObject.SetActive(true);
         toolPanel.gameObject.SetActive(true);
         for(int i = 0; i < panels.Length; i++)
@@ -283,8 +297,10 @@ public class Game : MonoBehaviour
         brickButton.res();
         brickButton.ResPosition();
         finish = false;
+        buildings.ancRes();
         slider.resTime();
         StartCoroutine(numberGenerator());
+       
         max = 0;
     }
 }

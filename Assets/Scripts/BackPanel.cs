@@ -35,4 +35,11 @@ public class BackPanel : MonoBehaviour
            
         }
     }
+    public void ancRes()
+    {
+        for(int i = 4; i < 6; i++)
+        {
+            buildings[i].ancRes();
+        }
+    }
 }

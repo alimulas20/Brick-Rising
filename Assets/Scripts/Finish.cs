@@ -22,6 +22,6 @@ public class Finish : MonoBehaviour
     }
     public void setScore(int score)
     {
-        ScoreText.text = "Score:     " + score;
+        ScoreText.text = "Score: " + score;
     }
 }
